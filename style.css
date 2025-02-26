@@ -1,0 +1,93 @@
+/* seletor universal para css*/
+*{
+    margin: 0; /*margem externa*/
+    padding: 0; /*margem interna*/
+    box-sizing: border-box; /* tamanho padrão de conteudos, border-box=as bordas são internas*/
+    font-family: 'Outfit', Times New Roman; /*fonte*/
+}
+/*estilo para o html todo*/
+html{
+    height: 100vh; /*altura*/
+    font-size: 14px; /*tamanho da fonte*/
+}
+/*estilo do corpo*/
+body{
+    height: 100%;
+    background: linear-gradient(to bottom, black, #050130); /*cor do fundo*/
+}
+/*chamando as classes*/
+.container{
+    height: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: #ffffff;
+}
+/*cabeçalho*/
+header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+/*imagem do cabeçalho, como so tem uma e ela nao tem classe, usar esquema de filho*/
+header img{
+    max-width: 200px;
+    margin-top: -40px;
+    margin-bottom: -20px;
+}
+/*h1 filho de cabeçalho*/
+header h1{
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: aqua;
+}
+/*para os link*/
+a{
+    text-decoration: none;
+    color: aqua;
+}
+/*classe da section dos botões*/
+.buttons-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/*botões em si*/
+.link button{
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    background: radial-gradient(red, rgb(107, 0, 0));
+    color: #ffffff;
+    transition: .2s;
+}
+/*novamente os botões em si, mas agora quando o mouse estiver em cima*/
+/*adicionado posteriormente o hover para os link de rodape*/
+.link button:hover, .button-footer:hover{
+    transform: scale(1.05);
+}
+/*rodape*/
+footer{
+    text-align: center;
+    margin: 40px;
+}
+/*classe dos links do rodape*/
+.button-footer{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    font-size: 2.5em;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: .2s;
+}
