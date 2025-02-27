@@ -7,74 +7,74 @@
 }
 /*estilo para o html todo*/
 html{
-    height: 100vh; /*altura*/
+    height: 100vh; /*altura, vh tamanho da tela toda*/
     font-size: 14px; /*tamanho da fonte*/
 }
 /*estilo do corpo*/
 body{
     height: 100%;
-    background: linear-gradient(to bottom, black, #050130); /*cor do fundo*/
+    background: linear-gradient(to bottom, black, #050130); /*cor do fundo em gradiente em linha*/
 }
 /*chamando as classes*/
 .container{
-    height: 100%;
-    max-width: 550px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100%;/*porcetagem, do tamanho ja estabelecido do pai, no caso html*/
+    max-width: 550px; /* maximo de largura*/
+    margin: 0 auto; 
+    display: flex; /*como deve ser mostrado, de forma flexivel ou seja responsivo por natureza*/
+    flex-direction: column; /*de forma em coluna um abaixo do outro*/
+    justify-content: center; /*como os elementos dentro, e o espaço entre eles deve se comportar, no caso tudo no meio*/
     padding: 20px;
-    color: #ffffff;
+    color: #ffffff;/*cor do conteudo, sendo textos, imagens e outros*/
 }
 /*cabeçalho*/
 header{
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: center;/*um justify content, exclusivo de texto*/
+    margin-bottom: 40px; /*margem externa especifica para baixo*/
 }
 /*imagem do cabeçalho, como so tem uma e ela nao tem classe, usar esquema de filho*/
 header img{
     max-width: 200px;
-    margin-top: -40px;
+    margin-top: -40px;/*margem externa especifica para cima*/
     margin-bottom: -20px;
 }
 /*h1 filho de cabeçalho*/
 header h1{
-    font-size: 2em;
+    font-size: 2em; /*tamanho da fonte, sendo que em em, ou seja vezes o tamanho do pai, no caso html*/
     margin-bottom: 10px;
     color: aqua;
 }
 /*para os link*/
 a{
-    text-decoration: none;
+    text-decoration: none; /*decorações do texto, como link ja vem com o traço em baixo, aqui estou desativando*/
     color: aqua;
 }
 /*classe da section dos botões*/
 .buttons-links{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; /*especifico para distancia entre os itens*/
 }
 /*botões em si*/
 .link button{
-    width: 70%;
-    padding: 10px;
+    width: 70%; /*largura*/
+    padding: 10px; 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    border-radius: 10px;
+    align-items: center; /*alinhamento dos itens*/
+    justify-content: space-between; /*entre os itens fica um espaço*/
+    margin-left: auto; /*margem externa da esquerda, auto para usar tudo possivel*/
+    margin-right: auto; /*margem externa da direita, junto com a anterior centraliza o item na vertical*/
+    border: none; /*desativa as bordas, no caso de um botão*/
+    border-radius: 10px; /*começa a arredondar as bordas do botão, que por padrão é um quadrado*/
     font-size: 1.3em;
-    cursor: pointer;
-    background: radial-gradient(red, rgb(107, 0, 0));
+    cursor: pointer; /*ativa a funcionalidade do cursor virar uma mão sobre o botão*/
+    background: radial-gradient(red, rgb(107, 0, 0)); /*radial grandient, é um gradiente em forma de circulo*/
     color: #ffffff;
-    transition: .2s;
+    transition: .2s; /*transição sobre os efeitos, para deixa-los mais fluidos*/
 }
 /*novamente os botões em si, mas agora quando o mouse estiver em cima*/
 /*adicionado posteriormente o hover para os link de rodape*/
 .link button:hover, .button-footer:hover{
-    transform: scale(1.05);
+    transform: scale(1.05); /*trasforma algo, no caso os botões e os link de rodape, scale aumenta ou diminui*/
 }
 /*rodape*/
 footer{
@@ -85,7 +85,7 @@ footer{
 .button-footer{
     width: 60px;
     height: 60px;
-    display: inline-block;
+    display: inline-block; /*inline-block, são objetos em bloco oq permite da tamanho a ele e em linha oq permite permanecerem alinhados verticalmente*/
     font-size: 2.5em;
     margin-left: 10px;
     margin-right: 10px;
