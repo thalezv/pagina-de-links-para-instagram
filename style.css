@@ -13,7 +13,78 @@ html{
 /*estilo do corpo*/
 body{
     height: 100%;
-    background: linear-gradient(to bottom, black, #050130); /*cor do fundo em gradiente em linha*/
+    background: linear-gradient(to bottom, #121212, #050130); /*cor do fundo em gradiente em linha*/
+}
+.fixo{
+    position: fixed;
+    top: 10%;
+    right: 10%;
+}
+.fixo .button-compartilhar{
+    background-color: #03DAC6;
+    width: 45px;
+    padding: 10px; 
+    font-size: 1.5em;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.fixo .button-compartilhar:hover{
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.fixo .button-compartilhar span{
+    visibility: hidden;
+}
+.fixo .button-compartilhar:hover span{
+    visibility:visible;
+}
+.fixo .button-compartilhar img{
+    width: 25px;
+    height: 25px;
+}
+.menu-compartilhar{
+    padding: 10px;
+    position: fixed;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    top: 25%;
+    left: calc(50% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    border: none;
+    border-radius: 10px;
+}
+.menu-compartilhar .buttons-compartilhamentos{
+    display: flex;
+    gap: 15px;
+}
+.menu-compartilhar span{
+    font-size: 1.5em;
+    font-weight: 800;
+}
+.menu-compartilhar .buttons-compartilhamentos button{
+    height: 40px;
+    width: 40px;
+    font-size: 1.5em;
+    padding: auto;
+    background-color: #03DAC6;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.hidden{
+    transition: 0.2s;
+    visibility: hidden;
 }
 /*chamando as classes*/
 .container{
@@ -29,7 +100,7 @@ body{
 /*cabeçalho*/
 header{
     text-align: center;/*um justify content, exclusivo de texto*/
-    margin-bottom: 40px; /*margem externa especifica para baixo*/
+    margin-bottom: 60px; /*margem externa especifica para baixo*/
 }
 /*imagem do cabeçalho, como so tem uma e ela nao tem classe, usar esquema de filho*/
 header img{
@@ -40,19 +111,25 @@ header img{
 /*h1 filho de cabeçalho*/
 header h1{
     font-size: 2em; /*tamanho da fonte, sendo que em em, ou seja vezes o tamanho do pai, no caso html*/
+    font-family: 'Inter', sans-serif;
     margin-bottom: 10px;
-    color: aqua;
+    color: #03DAC6;
+}
+/* p no cabeçalho*/
+header p{
+    font-size: 1.3em;
+    font-family: 'Roboto', sans-serif;
 }
 /*para os link*/
 a{
     text-decoration: none; /*decorações do texto, como link ja vem com o traço em baixo, aqui estou desativando*/
-    color: aqua;
+    color: #03DAC6;
 }
 /*classe da section dos botões*/
 .buttons-links{
     display: flex;
     flex-direction: column;
-    gap: 10px; /*especifico para distancia entre os itens*/
+    gap: 15px; /*especifico para distancia entre os itens*/
 }
 /*botões em si*/
 .link button{
@@ -65,16 +142,19 @@ a{
     margin-right: auto; /*margem externa da direita, junto com a anterior centraliza o item na vertical*/
     border: none; /*desativa as bordas, no caso de um botão*/
     border-radius: 10px; /*começa a arredondar as bordas do botão, que por padrão é um quadrado*/
-    font-size: 1.3em;
+    font-size: 1.5em;
     cursor: pointer; /*ativa a funcionalidade do cursor virar uma mão sobre o botão*/
-    background: radial-gradient(red, rgb(107, 0, 0)); /*radial grandient, é um gradiente em forma de circulo*/
-    color: #ffffff;
+    background: radial-gradient(aqua, #BB86FC); /*radial grandient, é um gradiente em forma de circulo*/
+    color: white;
     transition: .2s; /*transição sobre os efeitos, para deixa-los mais fluidos*/
 }
 /*novamente os botões em si, mas agora quando o mouse estiver em cima*/
 /*adicionado posteriormente o hover para os link de rodape*/
 .link button:hover, .button-footer:hover{
+    transition: .2s;/* transição de entrada no efeito */
+    filter: brightness(1.2); /* brilho */
     transform: scale(1.05); /*trasforma algo, no caso os botões e os link de rodape, scale aumenta ou diminui*/
+    background: radial-gradient(#BB86FC, #BB86FC); /* botão fica todo roxo */
 }
 /*rodape*/
 footer{
@@ -90,4 +170,17 @@ footer{
     margin-left: 10px;
     margin-right: 10px;
     transition: .2s;
+}
+
+@media screen and (max-width: 768px){
+    .fixo .button-compartilhar:hover{
+        width: 45px;
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .fixo .button-compartilhar:hover span{
+        visibility: hidden;
+    }
 }

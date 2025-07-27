@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@thalezv</title>
+        <title>Pagina de links - @thalezv</title>
         <meta name="viewport" content="width=device-width, inicial-scale=1.0">
         <meta charset="utf-8">
+        <meta name="description" content="Centralize seus links em uma página simples e elegante.">
+        <meta property="og:title" content="Links de @thalezv">
+        <meta property="og:description" content="Centralize seus links em uma página simples e elegante.">
+        <meta property="og:image" content="https://thalezv.github.io/pagina-de-links-para-instagram/imagens/preview-links.png">
+        <link rel="icon" href="imagens/link-icon.svg" type="image/svg">
         <!--linkando o css-->
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
         <!--importando icones de redes sociais e outras do bootstrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <script src="compartilhamentos.js" defer></script>
     </head>
     <body>
+        <!--botão de compartilhamento-->
+        <div class="fixo">
+            <button class="button-compartilhar">
+                <span >Compartilhar</span>
+                <img src="imagens/link-icon.svg" alt="Compartilhar">
+            </button>
+        </div>
+        <div class="menu-compartilhar hidden">
+            <span>Compartilhe em:</span>
+            <div class="buttons-compartilhamentos">
+                <button onclick="window.open('https://wa.me/?text=https://thalezv.github.io/pagina-de-links-para-instagram/', '_blank')" class="compartilhar-whats"><i class="bi bi-whatsapp"></i></button>
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://thalezv.github.io/pagina-de-links-para-instagram/', '_blank')" class="compartilhar-linkerdin"><i class="bi bi-linkedin"></i></button>
+                <button onclick="compartilharInstagram()" class="compartilhar-instagram"><i class="bi bi-instagram"></i></button>
+
+                <script>
+                function compartilharInstagram() {
+                    const link = "https://thalezv.github.io/pagina-de-links-para-instagram/";
+
+                    navigator.clipboard.writeText(link).then(() => {
+                        alert("✅ Link copiado! Agora cole no Direct do Instagram.");
+                        window.open("https://www.instagram.com/", "_blank");
+                    }).catch(err => {
+                        alert("❌ Não foi possível copiar o link.");
+                        console.error(err);
+                    });
+                }
+                </script>
+            </div>
+        </div>
         <!--div, container estetico -->
         <!--delimitar as bordas sem mecher em body-->
         <div class="container">
